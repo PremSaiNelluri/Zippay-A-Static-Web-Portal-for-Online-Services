@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TABLE RESERVATION</title>
+    <link rel="shortcut icon" type="image/jpeg" href="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/5f/70/7a/5f707a5d-72f6-5287-5391-714a5a3ece28/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/434x0w.webp">
+    <style>
+        .img {
+            background-image: url('https://d23ynomj6u3eig.cloudfront.net/sites/default/files/2021-07/HeroPromotionalImage.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 810px;
+            position: relative;
+            background-position-x: center;
+        }
+
+        .bx {
+            background-color: aliceblue;
+            height: 770px;
+            width: 600px;
+            margin-left: 890px;
+            margin-top: 33px;
+            border-radius: 30px;
+            box-shadow: 0px 10px 20px 0px aqua;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .txt {
+            position: absolute;
+            left: 80px;
+            top: 160px;
+            font-size: 75px;
+            font-style: italic;
+            color: aliceblue;
+        }
+
+        #bt:hover:active {
+            background-color: orangered;
+        }
+        
+        .form-input {
+            width: 500px;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 5px;
+        }
+
+        .form-input-btn {
+            width: 100px;
+            height: 40px;
+            border-radius: 20px;
+            font-size: 15px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        #reserve-btn {
+            height: 60px;
+            width: 150px;
+            margin-left: 225px;
+            cursor: pointer;
+            font-size: 20px;
+            background-color: #dc7241;
+            border-radius: 100%;
+            box-shadow: 0px 10px 20px 0px black;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            // Get form fields
+            var location = document.getElementById('location').value;
+            var date = document.querySelector('input[name="date"]:checked') ? document.querySelector('input[name="date"]:checked').value : document.getElementById('date-picker').value;
+            var session = document.querySelector('input[name="session"]:checked') ? document.querySelector('input[name="session"]:checked').value : "";
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+
+            // Validate form fields
+            if (!location || !date || !session || !name || !phone) {
+                alert("All fields are required!");
+                return false;
+            }
+            if (phone.length != 10 || isNaN(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return false;
+            }
+
+            // Show confirmation message
+            alert("Form submitted successfully! Please proceed to pay.");
+            return true;
+        }
+
+        // Set current date and next day as values
+        window.onload = function() {
+            var today = new Date().toISOString().split('T')[0];
+            var tomorrow = new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+            document.getElementById('today-btn').value = today;
+            document.getElementById('tomorrow-btn').value = tomorrow;
+        };
+    </script>
+</head>
+<body class="img">
+    <div class="bx">
+        <form onsubmit="return validateForm()">
+            <font style="font-size: 30px;"><strong>Let us serve you better</strong></font><br><br>
+            <font style="font-size: 25px; color: grey;">Don’t wait in a line to enjoy your meal.<br>Reserve a table in advance with us.</font><br><br>
+
+            <font style="font-size: 25px;">Location</font><br><br>
+            <select id="location" class="form-input">
+                <option value="">Select</option>
+                <option value="Vijayawada">Vijayawada</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Benguluru">Bengaluru</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+            </select><br>
+
+            <font style="font-size: 25px;">Date</font><br><br>
+            <input type="button" id="today-btn" name="date" class="form-input-btn" onclick="document.getElementById('date-picker').value = this.value; this.checked = true;">
+            <input type="button" id="tomorrow-btn" name="date" class="form-input-btn" onclick="document.getElementById('date-picker').value = this.value; this.checked = true;">
+            <input type="date" id="date-picker" class="form-input" style="width: 150px;" value=""><br>
+
+            <font style="font-size: 25px;">Session</font><br><br>
+            <input type="radio" id="lunch" name="session" value="Lunch" class="form-input-btn"><label for="lunch">Lunch</label>
+            <input type="radio" id="dinner" name="session" value="Dinner" class="form-input-btn"><label for="dinner">Dinner</label><br><br>
+
+            <font style="font-size: 25px;">Name</font><br><br>
+            <input type="text" id="name" class="form-input"><br>
+
+            <font style="font-size: 25px;">Phone Number</font><br><br>
+            <input type="tel" id="phone" maxlength="10" class="form-input"><br>
+
+            <input type="submit" value="Reserve Table" id="reserve-btn">
+        </form>
+    </div>
+
+    <div class="child">
+        <div class="txt">
+            <p>LET US SERVE <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YOU BETTER</strong></p>
+        </div>
+    </div>
+</body>
+</html>

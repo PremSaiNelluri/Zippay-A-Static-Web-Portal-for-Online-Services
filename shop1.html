@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+.container{
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+        }
+
+        .item {
+  font-size: 30px;
+  line-height: 1;
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border: 3px solid white;
+  color: black;
+  margin: px;
+  text-align: left;
+  cursor: pointer;
+  font-style: italic;
+}
+
+.div1{
+  float: left;
+  border: 200px;
+  border-color: black;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+    </style>
+</head>
+<body style="margin-left: 150px;margin-right: 150px;">
+    <p align="center" style="font-size: 60px;font-style:italic ;">Online Orders</p>
+    <button style="width: 450px;height: 50px;font-size: 20px;font-style: italic;float: left;text-align: left;cursor: pointer;">&nbsp;&nbsp;Delivery Address &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="change.html" target="_self"><font color="black" text-decoration="none">Change</font></a></button><br><br><br><br><br>
+    
+    <div class="container">
+        <div class="item item-1" style="flex-grow: 3;">Lunch Menu</div>
+        <div class="item item-2" style="flex-grow: 1;">Staters</div>
+        <div class="item item-3" style="flex-grow: 1;">Mains</div>
+  </div><hr>
+
+  <font size="25px">Lunch Menu</font>
+  <p style="font-size: 20px;font-style: italic;">Serves daily between 12-5pm</p>
+  <img style="float: right;"  src="https://lh3.googleusercontent.com/LNGjwIHDTd2gVQjzfPD-p1sQazkQoEB2VnhxiQ3KGVhM7tVxxYmjZDzrSjD87ww_jCWQrH7bbTMXcmGZYtdP" height="330px" width="100%">
+  
+  <p style="font-size: 35px;">STATERS</p>
+  <p style="font-size: 20px;font-style: italic;">This is a section of your menu, customize it any way you want.</p>
+<br><br>
+  <div class="row">
+    <div class="div1">
+        <p style="font-size: 20px;">This Is Your First Item</p>
+        <p style="font-size: 20px;">Our famous French baguette, with olive oil & <br>balsamic vinegar</p>
+        <br><br>
+        <p style="font-size: 30px;">$5.00</p>
+        <div class="div1">
+          <img  src="https://lh3.googleusercontent.com/Pg1FRIy9WZ-70s9HXgfBUvTBMTkWa80IvrloYsrz4OgszhSPbARzdNd-TTuMkUJAV4DKX59JWFBQZuLuryFL" align="right" height="178px" width="178px">
+        </div>
+    </div>
+
+    <div class="div1">
+      <p style="font-size: 20px;">This Is Your Second Item</p>
+      <p style="font-size: 20px;">Organic spinach salad, sprinkled with<br> parmesan & pine nuts</p>
+      <br><br>
+      <p style="font-size: 30px;">$5.00</p>
+      <div class="div1">
+        <img src="https://lh3.googleusercontent.com/IVP1jizTRs9YbdbiVS3VwXSCHef96dsxmZzQCSO2aVGCETN3IACI5TUN2zqFhO31FkRJCcmP-Z3V6Zbx-ZHSYA" height="178px" width="178px">
+      </div>
+  </div>
+
+
+  </div>
+
+</body>
+</html>8

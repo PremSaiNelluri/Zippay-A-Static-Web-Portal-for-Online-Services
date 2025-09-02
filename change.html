@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .bg {
+            background-image: url('https://img.freepik.com/free-photo/order-food-table-empty-background_1253-744.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .label {
+            font-size: 25px;
+            font-family: cursive;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], input[type="time"] {
+            height: 50px;
+            width: 400px;
+            font-size: 22px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            padding: 5px;
+        }
+
+        .button {
+            font-size: 35px;
+            font-family: 'Times New Roman', Times, serif;
+            height: 50px;
+            width: 120px;
+            background-color: antiquewhite;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body class="bg">
+    <div class="container">
+        <p align="center" style="font-size: 30px;">DELIVERY DETAILS</p>
+        <p class="label">Delivery Address</p>
+        <input type="text" id="delivery-address" placeholder="Enter your address">
+
+        <p class="label">Delivery Time</p>
+        <input type="time" id="delivery-time"><br>
+
+        <button class="button" onclick="saveDeliveryDetails()">Save</button>
+    </div>
+
+    <script>
+        function saveDeliveryDetails() {
+            const address = document.getElementById('delivery-address').value;
+            const time = document.getElementById('delivery-time').value;
+
+            if (!address) {
+                alert("Please enter a delivery address.");
+                return;
+            }
+
+            localStorage.setItem('deliveryAddress', address);
+            localStorage.setItem('deliveryTime', time);
+
+            alert("Delivery details saved successfully!");
+        }
+    </script>
+</body>
+</html>

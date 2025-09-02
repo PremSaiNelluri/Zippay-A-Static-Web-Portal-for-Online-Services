@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ONLINE ORDER</title>
+    <link rel="shortcut icon" type="image/jpeg" href="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/5f/70/7a/5f707a5d-72f6-5287-5391-714a5a3ece28/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/434x0w.webp">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .item {
+            font-size: 30px;
+            line-height: 1;
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border: 3px solid white;
+            color: black;
+            margin: px;
+            text-align: left;
+            cursor: pointer;
+            font-style: italic;
+        }
+        .div1 {
+            float: left;
+            border: 200px;
+            border-color: black;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .product {
+            background-color: beige;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            width: 240px;
+            padding-bottom: 30px;
+            padding-right: 120px;
+            padding-left: 60px;
+            border-color: aqua;
+        }
+        .button {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-style: 10px;
+        }
+        .button:hover {
+            background-color: #555;
+            cursor: pointer;
+        }
+        .product:hover {
+            border: 2px;
+            border-color: aqua;
+        }
+        .nav {
+            display: flex;
+            background: brown;
+            justify-content: space-between;
+            border-radius: 15px;
+            height: 80px;
+            align-items: center;
+            width: 100%;
+            background: linear-gradient(60deg,#e60f16,rgb(0, 255, 106),rgb(137, 10, 240),rgb(227, 91, 7));
+            background-size: 400% 400%;
+            animation: tex 7s ease infinite;
+            z-index: 10;
+            margin-right: 400px;
+        }
+        .navbar {
+            position: relative;
+            left: 5px;
+            color: white;
+            float: left;
+        }
+        li {
+            display: inline;
+            float: left;
+            font-size: 30px;
+            font-family: Ananda;
+        }
+        li a {
+            color: aqua;
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        let cart = [];
+
+        function addToCart(productName, productPrice) {
+            cart.push({ name: productName, price: productPrice });
+            alert(productName + ' has been added to your cart!');
+        }
+
+        function viewCart() {
+            console.log(cart);
+            let cartContent = cart.map(item => item.name + " - " + item.price).join('\n');
+            alert('Cart Contents:\n' + cartContent);
+        }
+    </script>
+</head>
+<body style="margin-left: 150px; margin-right: 150px;">
+    <div class="nav">
+        <div class="navbar">
+            <a href="hotelmanagement.html">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp6ILjS-TD50ACjzdIL8aM-HuoGLvkqyYWwNWQZKWHha4Onv34kqrFYEujvAaEVqDBPIaeboCjahc&usqp=CAU&ec=48665698" height="70px" width="120px" style="float: left; cursor: pointer;">
+            </a>
+        </div>
+        <div style="float: right;">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+        </div>
+    </div>
+    <p align="center" style="font-size: 60px; font-style: italic;">Online Orders</p>
+    <a href="change.html" target="_self">
+        <button style="width: 450px; height: 50px; font-size: 20px; font-style: italic; float: left; text-align: left; cursor: pointer;">
+            &nbsp;&nbsp;Delivery Address &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <font color="black" text-decoration="none">Change</font>
+        </button>
+    </a>
+    <br><br><br><br><br>
+    <div class="container">
+        <div class="item item-1" style="flex-grow: 1;">
+            <a href="#lun" style="text-decoration: none; color: black;">Lunch Menu</a>
+        </div>
+        <div class="item item-2" style="flex-grow: 1;">
+            <a href="#str" style="text-decoration: none; color: black;">Starters</a>
+        </div>
+        <div class="item item-3" style="flex-grow: 1;">
+            <a href="#sas" style="text-decoration: none; color: black;">Soups and Salads</a>
+        </div>
+    </div>
+    <hr>
+    <p id="lun" align="left" style="font-size: 50px;">Lunch Menu</p>
+    <p style="font-size: 20px; font-style: italic;">Serves daily between 12-5pm</p>
+    <table>
+        <tr>
+            <td>
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuWkqR087ENNtJpkaDYBJ5iZx7BeaUJXfjzA&s" alt="I'm a product" fetchpriority="high" style="width: 310px; height: 240px; object-fit: cover; object-position: 50% 50%;">
+                    <br>
+                    <p style="font-size: 25px;">Chicken Biriyani RS250</p><br><br>
+                    <a class="button" href="buynow.html">buy now</a>
+                    <a class="button" onclick="addToCart('Chicken Biriyani', 250)">add to cart</a>
+                </div>
+            </td>
+            <td>
+                <div class="product">
+                    <img src="https://www.licious.in/blog/wp-content/uploads/2022/06/mutton-hyderabadi-biryani-01-600x600.jpg" alt="I'm a product" fetchpriority="high" style="width: 310px; height: 240px; object-fit: cover; object-position: 50% 50%;">
+                    <br>
+                    <p style="font-size: 25px;">Mutton Biriyani<br>RS300</p><br><br>
+                    <a class="button" href="buynow.html">buy now</a>
+                    <a class="button" onclick="addToCart('Mutton Biriyani', 300)">add to cart</a>
+                </div>
+            </td>
+            <td>
+                <div class="product">
+                    <img src="https://cookingfromheart.com/wp-content/uploads/2015/06/Egg-Biriyani-5.jpg" alt="I'm a product" fetchpriority="high" style="width: 310px; height: 240px; object-fit: cover; object-position: 50% 50%;">
+                    <br>
+                    <p style="font-size: 25px;">Egg Biriyani<br>RS180</p><br><br>
+                    <a class="button" href="buynow.html">buy now</a>
+                    <a class="button" onclick="addToCart('Egg Biriyani', 180)">add to cart</a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRibBI2iwagLimWRmXfhnuYQtX-lAjLLmZ9bA&s" alt="I'm a product" fetchpriority="high" style="width: 310px; height: 240px; object-fit: cover; object-position: 50% 50%;">
+                    <br>
+                    <p style="font-size: 25px;">Chicken Dum Biriyani<br>RS300</p><br><br>
+                    <a class="button" href="buynow.html">buy now</a>
+                    <a class="button" onclick="addToCart('Chicken Dum Biriyani', 300)">add to cart</a>
+                </div>
+            </td>
+            <td>
+                <div class="product">
+                    <img src="https://images.getrecipekit.com/20211124220241-veg-20biryani.jpg?aspect_ratio=1:1&quality=90&auto_optimize=medium" alt="I'm a product" fetchpriority="high" style="width: 310px; height: 240px; object-fit: cover; object-position: 50% 50%;">
+                    <br>
+                    <p style="font-size: 25px;">Veg Biriyani<br>RS150</p><br><br>
+                    <a class="button" href="buynow.html">buy now</a>
+                    <a class="button" onclick="addToCart('Veg Biriyani', 150)">add to cart</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <p id="str" align="left" style="font-size: 50px;">Starters</p>
+    <p style="font-size: 20px; font-style: italic;">Serves daily between 11-4pm</p>
+    <table>
+        <tr>
+            <td>
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYo6i5Nif8pf7FCNWjwhnkG_CI1VXYLDaBUA&s" alt="I'm a product" fetchpriority="high" style="width: 310px; height: 240px; object-fit: cover; object-position: 50% 50%;">
+                    <br>
+                    <p style="font-size: 25px;">Chicken Tikka RS200</p><br><br>
+                    <a class="button" href="buynow.html">buy now</a>
+                    <a class="button" onclick="addToCart('Chicken Tikka', 200)">add to cart</a>
+                </div>
+            </td>
+            <td>
+                <div class="product">
+                    <img src="https://healthynibblesandbits.com/wp-content/uploads/2019/07/Paneer-Tikka-Masala-FF3.jpg" alt="I'm a product" fetchpriority="high" style="width: 310px; height: 240px; object-fit: cover; object-position: 50% 50%;">
+                    <br>
+                    <p style="font-size: 25px;">Paneer Tikka RS180</p><br><br>
+                    <a class="button" href="buynow.html">buy now</a>
+                    <a class="button" onclick="addToCart('Paneer Tikka', 180)">add to cart</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <p id="sas" align="left" style="font-size: 50px;">Soups and Salads</p>
+    <p style="font-size: 20px; font-style: italic;">Serves daily between 12-3pm</p>
+    <table>
+        <tr>
+            <td>
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoEfqxo8U0beJmxSELoa_JiGkolL6hBsSHVg&s" alt="I'm a product" fetchpriority="high" style="width: 310px; height: 240px; object-fit: cover; object-position: 50% 50%;">
+                    <br>
+                    <p style="font-size: 25px;">Tomato Soup RS100</p><br><br>
+                    <a class="button" href="buynow.html">buy now</a>
+                    <a class="button" onclick="addToCart('Tomato Soup', 100)">add to cart</a>
+                </div>
+            </td>
+            <td>
+                <div class="product">
+                    <img src="https://cdn.loveandlemons.com/wp-content/uploads/2021/04/green-salad-1.jpg" alt="I'm a product" fetchpriority="high" style="width: 310px; height: 240px; object-fit: cover; object-position: 50% 50%;">
+                    <br>
+                    <p style="font-size: 25px;">Green Salad RS80</p><br><br>
+                    <a class="button" href="buynow.html">buy now</a>
+                    <a class="button" onclick="addToCart('Green Salad', 80)">add to cart</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <button class="button" onclick="viewCart()">View Cart</button>
+</body>
+</html>

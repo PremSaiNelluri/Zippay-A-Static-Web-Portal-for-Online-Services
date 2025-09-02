@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    .img {
+        background-image: url('https://img.freepik.com/free-photo/abstract-blur-defocused-restaurant-coffee-shop-cafe-interior_1203-9267.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .pm {
+        text-align: center;
+        letter-spacing: 8px;
+        color: darkturquoise;
+        margin-left: 570px;
+        font-size: 30px;
+        font-family: Ananda;
+    }
+
+    .dv {
+        height: 750px;
+        width: 1000px;
+        margin-left: 300px;
+        margin-right: 300px;
+        background-color: beige;
+        float: left;
+        border-radius: 30px;          
+    }
+
+    .gimg {
+        width: 400px;
+        height: 100px;
+    }
+
+    table {
+        border-collapse: separate;
+        border-spacing: 0px;
+        border-collapse: collapse;
+    }
+
+    table td {
+        padding: 15px;
+    }
+
+    input[type='radio'] {
+        height: 25px;
+        width: 25px;
+    }
+
+    tr:hover {
+        background-color: skyblue;
+        cursor: pointer;
+        border: 1px solid black;
+    }
+
+    .error {
+        color: red;
+        font-size: 16px;
+    }
+
+    .success {
+        color: green;
+        font-size: 20px;
+        text-align: center;
+    }
+
+</style>
+<script>
+    function validateForm(event) {
+        event.preventDefault();
+        let isValid = true;
+        let cardholderName = document.forms["paymentForm"]["cardholderName"].value;
+        let cardNumber = document.forms["paymentForm"]["cardNumber"].value;
+        let expiryDate = document.forms["paymentForm"]["expiryDate"].value;
+        let cvv = document.forms["paymentForm"]["cvv"].value;
+        
+        let errorMsg = "";
+        if (cardholderName == "") {
+            errorMsg += "Cardholder Name is required.\n";
+            isValid = false;
+        }
+        if (cardNumber == "") {
+            errorMsg += "Card Number is required.\n";
+            isValid = false;
+        }
+        if (expiryDate == "") {
+            errorMsg += "Expiry Date is required.\n";
+            isValid = false;
+        }
+        if (cvv == "") {
+            errorMsg += "CVV is required.\n";
+            isValid = false;
+        }
+        if (!isValid) {
+            alert(errorMsg);
+        } else {
+            document.getElementById("successMessage").style.display = "block";
+        }
+    }
+</script>
+</head>
+<body class="img">
+    <br>
+    <font class="pm">PAYMENT METHOD</font>
+    <br><br>
+    <div class="dv">
+    <div>
+    
+        <table>
+            <form name="paymentForm" onsubmit="validateForm(event)">
+                <tr>
+                    <td width="50%"><font style="font-size: 25px;">
+                    <input type="radio" value="click" name="click">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Credit & Debit card details</font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-size: 18px;">Transaction fee may apply</font></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img class="gimg" src="https://survs.com/static-files/images/payment/payment-methods.svg"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <p style="margin-left: 30px;font-size: 20px;font-style: italic;color:black;">Cardholder Name</p>
+                        <input type="text" name="cardholderName" style="width: 650px;height: 30px;font-size: 19px;">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <p style="margin-left: 30px;font-size: 20px;font-style: italic;color:black;">Card Number</p>
+                        <input type="text" name="cardNumber" style="width: 650px;height: 30px;font-size: 19px;">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <p style="margin-left: 30px;font-size: 20px;font-style: italic;color:black;">Expiry Date</p>
+                        <input type="month" name="expiryDate" style="width: 200px;height: 40px;font-size: 19px;">
+                    </td>
+                    <td>
+                        <p style="margin-left: 30px;font-size: 20px;font-style: italic;color:black;">CVV</p>
+                        <input type="tel" name="cvv" maxlength="3" style="width: 120px;height: 40px;font-size: 25px;letter-spacing: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-size: 20px;">! 3 digits</font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td width="50%"><input type="radio" value="click" name="click"><font style="font-size: 25px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Online banking & Debit Card</font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-size: 18px;">Free of Charge</font></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAP8vFX0vmL-biesUZGugF3T1LwUMbXlXUHtdnMSIcC7JjqQE2rTwt0PamhHPoMBiz5bnl3CMB8w&usqp=CAU&ec=48665698" height="45px" width="230px"></td>
+                </tr>
+
+                <tr>
+                    <td width="50%"><input type="radio" value="click" name="click"><font style="font-size: 25px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pay with Paytm</font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-size: 18px;">Transaction fee may apply</font></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://1000logos.net/wp-content/uploads/2021/03/Paytm_Logo.jpg" height="50px" width="250px"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" name="PAYNOW" value="PAYNOW" style="width: 900px;height: 40px;font-size: 20px;font-style:italic; background-color: black;color:aliceblue;transition: trans2,color .4s ease 0s;cursor: pointer;">
+                    </td>
+                </tr>
+            </form>
+        </table>
+        <p id="successMessage" class="success" style="display: none;">Form Submitted Successfully!</p>
+    </div>
+    </div>
+</body>
+</html>

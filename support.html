@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SUPPORT US</title>
+    <link rel="shortcut icon" type="image/jpeg" href="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/5f/70/7a/5f707a5d-72f6-5287-5391-714a5a3ece28/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/434x0w.webp">
+    <style>
+        .img {
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Barbieri_-ViaSophia25668.jpg/1280px-Barbieri-_ViaSophia25668.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        td {
+            padding: 25px;
+            padding-left: 220px;
+        }
+        .cai {
+            background-color: black;
+            color: aliceblue;
+        }
+        .cai:hover {
+            cursor: pointer;
+            background-color: aqua;
+        }
+
+        .txt {
+            font-size: 60px;
+            color: transparent;
+            background: linear-gradient(60deg,#e60f16,rgb(19, 244, 161),rgb(137, 10, 240),rgb(255, 255, 0));
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            animation: tex 7s ease infinite;
+            text-shadow: 200px;
+            letter-spacing: 8px;
+            font-family: Ananda;
+        }
+
+        @keyframes tex {
+            0%,100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+    </style>
+    <script>
+        function validateForm() {
+            // Get form elements
+            var firstName = document.forms["supportForm"]["firstName"].value;
+            var lastName = document.forms["supportForm"]["lastName"].value;
+            var email = document.forms["supportForm"]["email"].value;
+            var phoneNumber = document.forms["supportForm"]["phoneNumber"].value;
+            var issue = document.forms["supportForm"]["issue"].value;
+            var details = document.forms["supportForm"]["details"].value;
+
+            // Validation
+            if (firstName == "" || lastName == "" || email == "" || phoneNumber == "" || issue == "select" || details == "") {
+                alert("Please fill out all fields.");
+                return false;
+            } else {
+                alert("Form submitted successfully! Please proceed to pay now.");
+                // Optional: Redirect to a payment page or perform other actions
+                return true;
+            }
+        }
+    </script>
+</head>
+<body class="img">
+    <p align="center" class="txt">Contact support</p>
+    <p align="center" style="font-size: 30px; font-style: italic;">How can we help you?</p>
+    <form name="supportForm" onsubmit="return validateForm()" method="post">
+        <table>
+            <tr>
+                <td><font style="font-size: 30px;">First Name</font></td>
+                <td><input type="text" name="firstName" placeholder="Enter your first name" style="width: 700px; height: 60px; font-size: 19px;" required></td>
+            </tr>
+            <tr>
+                <td><font style="font-size: 30px;">Last Name</font></td>
+                <td><input type="text" name="lastName" placeholder="Enter your last name" style="width: 700px; height: 60px; font-size: 19px;" required></td>
+            </tr>
+            <tr>
+                <td><font style="font-size: 30px;">Email</font></td>
+                <td><input type="email" name="email" placeholder="Enter your email" style="width: 700px; height: 60px; font-size: 19px;" required></td>
+            </tr>
+            <tr>
+                <td><font style="font-size: 30px;">Phone Number</font></td>
+                <td><input type="text" name="phoneNumber" placeholder="Enter your phone number" style="width: 700px; height: 60px; font-size: 19px;" required></td>
+            </tr>
+            <tr>
+                <td><font style="font-size: 30px;">Choose an Issue</font></td>
+                <td>
+                    <select name="issue" style="width: 700px; height: 60px; font-size: 19px;" required>
+                        <option value="select">Choose an Issue</option>
+                        <option value="logging into account">Logging into account</option>
+                        <option value="completing payment">Completing payment</option>
+                        <option value="viewing content">Viewing content</option>
+                        <option value="uploading files">Uploading files</option>
+                        <option value="others">Others</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br><br>
+        <textarea name="details" placeholder="Let us know what you need help with..." style="width: 1030px; height: 150px; font-size: 19px;" required></textarea>
+        <br><br>
+        <button type="submit" style="width: 200px; height: 50px; font-size: 30px; font-style: italic; background-color: black; color: aliceblue; transition: trans2, color .4s ease 0s; cursor: pointer;">Get In Touch</button>
+    </form>
+</body>
+</html>
